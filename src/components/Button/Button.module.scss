@@ -1,0 +1,12 @@
+@import "../../styles/essentials";
+
+.wrapper {
+    padding: 8px 24px;
+    border: 1px solid map_get($color-grays, "600");
+    background: transparent;
+    cursor: pointer;
+
+    &:hover {
+        background: map_get($color-grays, "500");
+    }
+}
