@@ -1,21 +1,21 @@
 version: "3"
 
 services:
-  app:
-    image: movie-addicts-app
-    build: .
-    environment:
-      - NODE_ENV=production
-    command: node app.js
-    ports:
-      - "3001:3001"
-    volumes:
-      - ".:/usr/src/app"
-      - "/usr/src/app/node_modules"
-    depends_on:
-      - mongodb
-    networks:
-      - back-tier
+#  app:
+#    image: movie-addicts-app
+#    build: .
+#    environment:
+#      - NODE_ENV=production
+#    command: node index.js
+#    ports:
+#      - "3001:3001"
+#    volumes:
+#      - ".:/usr/src/app"
+#      - "/usr/src/app/node_modules"
+#    depends_on:
+#      - mongodb
+#    networks:
+#      - back-tier
 
   mongodb:
     image: mongo

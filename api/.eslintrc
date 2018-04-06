@@ -6,6 +6,8 @@
         "node": true
     },
     "rules": {
-        "import/newline-after-import": "off"
+        "no-console": "off",
+        "import/newline-after-import": "off",
+        "import/no-nodejs-modules": "off"
     }
 }
