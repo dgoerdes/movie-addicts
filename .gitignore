@@ -1,17 +1,17 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules
 
 # generated styles
-src/**/*.css
+react/src/**/*.css
 
 # testing
-/coverage
+coverage
 
 # production
-/build
-/styleguide
+react/build
+react/styleguide
 
 # misc
 .DS_Store
