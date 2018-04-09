@@ -15,5 +15,10 @@
     },
     "rules": {
         "import/order": "off"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
     }
 }
