@@ -1,7 +1,8 @@
 import { Module } from 'cerebral';
 import http from '../../providers/http';
-import AppModule from '../App/AppModule';
+import RouterModule from '../Router/RouterModule';
 import UserAgentModule from '../UserAgent/UserAgentModule';
+import AppModule from '../App/AppModule';
 
 /**
  * ROOT MODULE
@@ -10,8 +11,9 @@ export default Module({
     state: {},
     signals: {},
     modules: {
-        app: AppModule,
+        router: RouterModule,
         userAgent: UserAgentModule,
+        app: AppModule,
     },
     providers: {
         http,
