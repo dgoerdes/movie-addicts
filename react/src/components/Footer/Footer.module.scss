@@ -1,10 +1,12 @@
+@import "../../styles/essentials";
+
 .wrapper {
-    padding: 20px;
-    background-color: #212529;
+    padding: rem(20);
+    background-color: map_get($color-brand, "grey-dark");
 }
 
 .networkIndicator {
     width: 100%;
     text-align: center;
-    color: #fff;
+    color: map_get($color-brand, "grey-light");
 }

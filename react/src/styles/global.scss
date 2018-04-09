@@ -1,3 +1,4 @@
+@import "settings/settings.colors";
 
 // GLOBAL STYLES
 //
@@ -5,15 +6,15 @@
 // to the good old global style scope without any CSS Modules
 // scoping applied.
 
-
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
 html,
 body,
 #root {
     height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: map_get($color-brand, "grey-light");
 }

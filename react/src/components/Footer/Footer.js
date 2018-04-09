@@ -19,6 +19,7 @@ const Footer = ({ className, networkOffline }) => {
 
 Footer.propTypes = {
     networkOffline: PropTypes.bool,
+    className: PropTypes.string,
 };
 
 export default Footer;
