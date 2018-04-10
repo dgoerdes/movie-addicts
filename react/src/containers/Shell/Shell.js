@@ -4,11 +4,9 @@ import { state } from 'cerebral/tags';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ErrorInternal from '../ErrorInternal/ErrorInternal';
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 import s from './Shell.module.scss';
 
-const Loader = () => (
-    <div>loading ...</div>
-);
 
 class Shell extends React.Component {
 
@@ -49,7 +47,7 @@ class Shell extends React.Component {
                 <main className={s.shell__main}>
                     {ActivePage
                         ? <ActivePage />
-                        : <Loader />
+                        : <LoadingIndicator />
                     }
                 </main>
 

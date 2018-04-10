@@ -1,0 +1,41 @@
+@import "../../styles/essentials";
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: rem(300);
+}
+
+.spinner {
+    margin: rem(100 auto 0);
+    width: rem(70);
+    text-align: center;
+}
+
+.bounce {
+    display: inline-block;
+    width: rem(18);
+    height: rem(18);
+    border-radius: 100%;
+    background-color: map_get($color-brand, "primary");
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.bounce1 {
+    animation-delay: -0.32s;
+}
+
+.bounce2 {
+    animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1.0);
+    }
+}
