@@ -24,6 +24,7 @@
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-feather": "1.1.0",
+    "react-lazyload": "2.3.0",
     "sass-mq": "4.0.2"
   },
   "devDependencies": {
