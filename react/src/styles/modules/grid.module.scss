@@ -1,0 +1,14 @@
+@import "../essentials";
+
+.grid {
+    display: grid;
+    grid-gap: rem(20);
+}
+
+.grid.-inline {
+    display: inline-grid;
+}
+
+.grid.-columns4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

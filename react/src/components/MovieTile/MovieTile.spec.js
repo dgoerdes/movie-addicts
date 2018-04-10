@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Container } from '@cerebral/react';
 import controller from '../../controller';
-import Movies from './Movies';
+import { MovieTileConnected } from './MovieTile';
 
-describe('Movies', () => {
+describe('MovieTile', () => {
 
     it('renders without error', () => {
         ReactDOM.render(
             <Container controller={controller} >
-                <Movies />
+                <MovieTileConnected />
             </Container>,
             document.createElement('div')
         );
