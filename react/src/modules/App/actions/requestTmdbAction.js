@@ -2,7 +2,7 @@
  * REQUEST TMDB ACTION
  */
 export default ({ props, state, http }) => {
-    let queryString = '?api_key=0b3d54f5db191e65a529d9ed46734e9e';
+    let queryString = `?api_key=${process.env.REACT_APP_TMDB_KEY}`;
     const { method, endpoint, searchParams } = props.request;
 
     if (!method || !endpoint) return {
