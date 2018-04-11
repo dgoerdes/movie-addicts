@@ -9,6 +9,13 @@
     display: inline-grid;
 }
 
-.grid.-columns4 {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.grid.-columns2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid.-columns4medium {
+
+    @include mq($from: "medium") {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }

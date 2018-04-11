@@ -3,7 +3,7 @@ import Useragent from '@cerebral/useragent';
 const UserAgentModule = Useragent({
     media: {
         small: '(max-width: 639px)',
-        medium: '(min-width: 640px) and (min-width: 1199px)',
+        medium: '(min-width: 640px) and (max-width: 1199px)',
         large: '(min-width: 1200px)',
     },
     feature: false,

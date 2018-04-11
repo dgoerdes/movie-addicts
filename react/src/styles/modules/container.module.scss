@@ -1,10 +1,15 @@
 @import "../essentials";
 
 .container {
-    width: 100%;
+    width: 94%;
     max-width: rem(1200);
     margin: 0 auto;
 }
+
 .container.-spaces {
-    padding: rem(40 0);
+    padding: rem(30 0);
+
+    @include mq($from: "medium") {
+        padding: rem(40 0);
+    }
 }
