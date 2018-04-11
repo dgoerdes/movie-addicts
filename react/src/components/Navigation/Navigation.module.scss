@@ -1,0 +1,71 @@
+@import "../../styles/essentials";
+
+.linkList {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.linkList__item {
+    margin-left: rem(30);
+    font-weight: 300;
+
+    a {
+        text-decoration: none;
+        color: map_get($color-brand, "grey-light");
+
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.linkList__item.-active {
+
+    a {
+        text-decoration: underline;
+        font-weight: 600;
+        color: map_get($color-brand, "primary");
+    }
+}
+
+.linkList.-isMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .linkList__item {
+        margin-left: 0;
+        font-weight: 400;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: rem(82);
+            height: rem(64);
+            font-size: rem(12);
+        }
+
+        svg {
+            display: block;
+            width: rem(20);
+            height: rem(20);
+            margin-bottom: rem(5);
+        }
+
+        &:first-child {
+            border-left: 1px solid map_get($color-grays, "800");
+        }
+
+        &:last-child {
+            border-right: 1px solid map_get($color-grays, "800");
+        }
+    }
+
+    .linkList__item + .linkList__item {
+        border-left: 1px solid map_get($color-grays, "800");
+    }
+}

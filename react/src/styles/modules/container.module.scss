@@ -1,8 +1,10 @@
-
-// CONTAINER
+@import "../essentials";
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: rem(1200);
     margin: 0 auto;
+}
+.container.-spaces {
+    padding: rem(40 0);
 }

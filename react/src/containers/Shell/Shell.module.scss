@@ -1,15 +1,9 @@
+@import "../../styles/essentials";
+
 .shell {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    padding-top: rem(65);
 }
 
-.shell__header,
-.shell__footer {
-    flex: none;
-}
-
-.shell__main {
-    flex: 1 0 auto;
-    width: 100%;
+.shell.-hasMobileNav {
+    padding-bottom: rem(65);
 }

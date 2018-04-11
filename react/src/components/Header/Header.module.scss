@@ -1,15 +1,17 @@
 @import "../../styles/essentials";
 
 .wrapper {
-    padding: rem(20);
-    border-top: 4px solid map_get($color-brand, "primary");
-    background-color: map_get($color-brand, "grey-dark");
-}
-
-.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: rem(0 15);
+    border-top: 3px solid map_get($color-brand, "primary");
+    background-color: map_get($color-brand, "grey-dark");
 }
 
 .brand {
@@ -19,43 +21,42 @@
 }
 .brand__logo {
     display: block;
-    width: 36px;
-    height: 36px;
+    width: rem(32);
+    height: rem(32);
     margin-right: rem(10);
     color: map_get($color-brand, "primary");
 }
 .brand__name {
     font-weight: 300;
-    font-size: rem(24);
+    font-size: rem(20);
     color: map_get($color-brand, "grey-light");
 }
 
-.linkList {
+.mobileNav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+    background-color: map_get($color-brand, "grey-dark");
 }
-.linkList__item {
-    margin-left: rem(30);
-    font-weight: 300;
 
-    a {
-        text-decoration: none;
-        color: map_get($color-brand, "grey-light");
+.networkIndicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: rem(82);
+    height: rem(64);
+    font-size: rem(12);
+    color: map_get($color-grays, "500");
 
-        &:focus,
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-.linkList__item.-active {
-
-    a {
-        text-decoration: underline;
-        font-weight: 600;
-        color: map_get($color-brand, "primary");
+    svg {
+        display: block;
+        width: rem(20);
+        height: rem(20);
+        margin-bottom: rem(5);
     }
 }

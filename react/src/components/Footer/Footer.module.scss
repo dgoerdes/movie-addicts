@@ -2,11 +2,4 @@
 
 .wrapper {
     padding: rem(20);
-    background-color: map_get($color-brand, "grey-dark");
-}
-
-.networkIndicator {
-    width: 100%;
-    text-align: center;
-    color: map_get($color-brand, "grey-light");
 }

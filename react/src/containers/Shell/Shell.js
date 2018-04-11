@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from '@cerebral/react';
 import { state } from 'cerebral/tags';
+import classNames from 'classnames';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ErrorInternal from '../ErrorInternal/ErrorInternal';
@@ -37,21 +38,21 @@ class Shell extends React.Component {
     };
 
     render() {
-        const { networkOffline, activePage } = this.props;
+        const { networkOffline, activePage, mediaQueries } = this.props;
         const ActivePage = this.state.activePage;
 
         return (
-            <div className={s.shell}>
-                <Header className={s.shell__header} activePage={activePage} />
+            <div className={classNames(s.shell, { [s['-hasMobileNav']]: mediaQueries.small })}>
+                <Header activePage={activePage} mobileNav={mediaQueries.small} networkOffline={networkOffline} />
 
-                <main className={s.shell__main}>
+                <main>
                     {ActivePage
                         ? <ActivePage />
                         : <LoadingIndicator />
                     }
                 </main>
 
-                <Footer networkOffline={networkOffline} className={s.shell__footer} />
+                <Footer />
             </div>
         );
     }
@@ -61,6 +62,7 @@ export default connect(
     {
         activePage: state`app.activePage`,
         networkOffline: state`userAgent.network.offline`,
+        mediaQueries: state`userAgent.media`
     },
     Shell
 );
