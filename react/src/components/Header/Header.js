@@ -16,7 +16,7 @@ const Header = ({ className, activePage, mobileNav, networkOffline }) => {
             </a>
 
             <div className={classNames(s.nav, {[s['-mobile']]: mobileNav})}>
-                <Navigation activePage={activePage} />
+                <Navigation activePage={activePage} mobileNav={mobileNav} />
 
                 <div className={s.networkIndicator}>
                     {networkOffline ? <WifiOff /> : <Wifi />}

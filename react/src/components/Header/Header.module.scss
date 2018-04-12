@@ -10,7 +10,8 @@
     align-items: center;
     justify-content: space-between;
     padding: rem(0 15);
-    border-top: 3px solid map_get($color-brand, "primary");
+    //border-top: 3px solid map_get($color-brand, "primary");
+    border-bottom: 3px solid map_get($color-brand, "primary");
     background-color: map_get($color-brand, "grey-dark");
 }
 
