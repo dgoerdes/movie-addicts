@@ -32,13 +32,16 @@
     color: map_get($color-brand, "grey-light");
 }
 
-.mobileNav {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.nav.-mobile {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
     background-color: map_get($color-brand, "grey-dark");
 }
@@ -58,5 +61,9 @@
         width: rem(20);
         height: rem(20);
         margin-bottom: rem(5);
+    }
+
+    @include mq($from: "medium") {
+        margin-left: rem(40);
     }
 }

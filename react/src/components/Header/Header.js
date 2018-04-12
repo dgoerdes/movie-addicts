@@ -15,19 +15,14 @@ const Header = ({ className, activePage, mobileNav, networkOffline }) => {
                 </span>
             </a>
 
-            {mobileNav
-                ? (
-                    <div className={s.mobileNav}>
-                        <Navigation activePage={activePage} mobileNav={mobileNav} />
+            <div className={classNames(s.nav, {[s['-mobile']]: mobileNav})}>
+                <Navigation activePage={activePage} />
 
-                        <div className={s.networkIndicator}>
-                            {networkOffline ? <WifiOff /> : <Wifi />}
-                            {networkOffline ? 'Offline' : 'Online'}
-                        </div>
-                    </div>
-                )
-                : <Navigation activePage={activePage} />
-            }
+                <div className={s.networkIndicator}>
+                    {networkOffline ? <WifiOff /> : <Wifi />}
+                    {networkOffline ? 'Offline' : 'Online'}
+                </div>
+            </div>
         </header>
     );
 };
