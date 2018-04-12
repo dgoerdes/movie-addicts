@@ -7,3 +7,13 @@
 .shell.-hasMobileNav {
     padding-bottom: rem(65);
 }
+
+.shell__sticky {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.shell__stickyContent {
+    flex: 1;
+}

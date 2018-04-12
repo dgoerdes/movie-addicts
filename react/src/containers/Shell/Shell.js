@@ -45,14 +45,16 @@ class Shell extends React.Component {
             <div className={classNames(s.shell, { [s['-hasMobileNav']]: mediaQueries.small })}>
                 <Header activePage={activePage} mobileNav={mediaQueries.small} networkOffline={networkOffline} />
 
-                <main>
-                    {ActivePage
-                        ? <ActivePage />
-                        : <LoadingIndicator />
-                    }
-                </main>
+                <div className={s.shell__sticky}>
+                    <main className={s.shell__stickyContent}>
+                        {ActivePage
+                            ? <ActivePage />
+                            : <LoadingIndicator />
+                        }
+                    </main>
 
-                <Footer />
+                    <Footer />
+                </div>
             </div>
         );
     }

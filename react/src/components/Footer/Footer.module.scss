@@ -1,5 +1,29 @@
 @import "../../styles/essentials";
 
-.wrapper {
-    padding: rem(20);
+.attribution {
+    text-align: center;
+    padding: rem(30 20);
+    background-color: map_get($color-grays, "200");
+
+    img {
+        width: rem(50);
+        margin-right: 10px;
+    }
+
+    p {
+        margin: rem(5 0 0);
+    }
+
+    a {
+        color: #01d277;
+    }
+}
+
+.legal {
+    padding: rem(10);
+    background-color: map_get($color-grays, "300");
+    text-align: center;
+    font-weight: 300;
+    font-size: rem(14);
+    color: map_get($color-grays, "600");
 }
