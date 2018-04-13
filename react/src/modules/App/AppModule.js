@@ -1,8 +1,7 @@
 import { Module } from 'cerebral';
-import { set } from 'cerebral/operators';
-import { state } from 'cerebral/tags';
 import initMoviesSignal from '../Movies/signals/initMoviesSignal';
 import initSignal from './signals/initSignal';
+import routePageFactory from './factories/routePageFactory';
 
 /*
  * APP MODULE
@@ -11,21 +10,26 @@ export default Module({
     state: {
         requestedRoute: 'Home',
         activePage: null,
+        transitioning: false,
     },
     signals: {
         initSignal,
         homeRouted: [
-            set(state`app.activePage`, 'Home'),
+            routePageFactory({ pageName: 'Home' }),
         ],
         moviesRouted: [
-            initMoviesSignal,
-            set(state`app.activePage`, 'Movies'),
+            routePageFactory({
+                pageName: 'Movies',
+                beforeHook: [
+                    initMoviesSignal,
+                ]
+            }),
         ],
         tvShowsRouted: [
-            set(state`app.activePage`, 'TvShows'),
+            routePageFactory({ pageName: 'TvShows' }),
         ],
         catchAllRouted: [
-            set(state`app.activePage`, 'ErrorNotFound'),
+            routePageFactory({ pageName: 'ErrorNotFound' }),
         ]
     }
 });

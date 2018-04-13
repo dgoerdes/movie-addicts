@@ -16,6 +16,7 @@ class Shell extends React.Component {
 
         this.state = {
             activePage: null,
+            loadingChunk: false,
         };
     }
 
@@ -32,13 +33,14 @@ class Shell extends React.Component {
     requestComponentChunk(componentName) {
         if (!componentName) return;
 
+        this.setState({ loadingChunk: true });
         import(`../${componentName}/${componentName}`)
-            .then((res) => this.setState({ activePage: res.default }))
-            .catch(() => this.setState({ activePage: ErrorInternal }));
+            .then((res) => this.setState({ activePage: res.default, loadingChunk: false }))
+            .catch(() => this.setState({ activePage: ErrorInternal, loadingChunk: false }));
     };
 
     render() {
-        const { networkOffline, activePage, mediaQueries } = this.props;
+        const { networkOffline, activePage, mediaQueries, pageTransitioning } = this.props;
         const ActivePage = this.state.activePage;
 
         return (
@@ -47,9 +49,9 @@ class Shell extends React.Component {
 
                 <div className={s.shell__sticky}>
                     <main className={s.shell__stickyContent}>
-                        {ActivePage
-                            ? <ActivePage />
-                            : <LoadingIndicator />
+                        {(pageTransitioning || this.state.loadingChunk)
+                            ? <LoadingIndicator />
+                            : ActivePage ? <ActivePage /> : null
                         }
                     </main>
 
@@ -63,6 +65,7 @@ class Shell extends React.Component {
 export default connect(
     {
         activePage: state`app.activePage`,
+        pageTransitioning: state`app.transitioning`,
         networkOffline: state`userAgent.network.offline`,
         mediaQueries: state`userAgent.media`
     },
