@@ -12,6 +12,7 @@ const { compose } = require('react-app-rewired');
 const rewireSass = require('./config/rewireSass');
 const rewireESLint = require('./config/rewireESLint');
 const rewireWorkboxGenerate = require('./config/rewireWorkboxGenerate');
+const rewirePreact = require('react-app-rewire-preact');
 // const rewireBundleAnalyzer = require('react-app-rewire-bundle-analyzer');
 
 module.exports = function override(config, env) {
@@ -20,6 +21,7 @@ module.exports = function override(config, env) {
         rewireSass,
         // rewireBundleAnalyzer,
         rewireWorkboxGenerate,
+        rewirePreact,
         // rewireWorkboxInject,
     );
 
